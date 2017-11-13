@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Daniel Toth">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="body">
+   <div id="data"></div>
+   <div id="arrow1"></div>
+   <div id="arrow2"></div>
+   <div id="arrow3"></div>
+  </div>
+
+<script>
+var propcomJSON = "http://design.propcom.co.uk/buildtest/accordion-data.json";
+$.getJSON(propcomJSON, function (json) {
+    json.blocks.map(x => {
+      $('#data').append('<div class="heading">' + '<button class="dropbtn">' + x.heading + '</button>' + '</div>' + '<div class="content">' + x.content + '</div>' + '<br>');
+    })
+  $($('.heading')[0]).attr("id", "heading1");
+  $($('.heading')[1]).attr("id", "heading2");
+  $($('.heading')[2]).attr("id", "heading3");
+  $($('.dropbtn')[0]).attr("id", "dropbtn1");
+  $($('.dropbtn')[1]).attr("id", "dropbtn2");
+  $($('.dropbtn')[2]).attr("id", "dropbtn3");
+  $($('.content')[0]).attr("id", "content1");
+  $($('.content')[1]).attr("id", "content2");
+  $($('.content')[2]).attr("id", "content3");
+
+
+
+$("#dropbtn1").click(function(){
+    $("#content1").toggle(1000);
+});
+
+$("#dropbtn2").click(function(){
+    $("#content2").toggle(1000);
+});
+
+$("#dropbtn3").click(function(){
+    $("#content3").toggle(1000);
+});
+
+});
+</script>
+
+</body>
+</html>
