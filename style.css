@@ -29,7 +29,7 @@ body {
   text-align: left;
 }
 
-.dropbtn:focus-within, .dropbtn:hover {
+.click {
   color: white;
   font-size: 2em;
   font-weight: bold;
@@ -54,4 +54,26 @@ body {
 #content3 {
   display: none;
   z-index: 1;
+}
+
+.arrow {
+  position: absolute;
+  left: 75%;
+  width: 15px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
 }

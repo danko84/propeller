@@ -10,20 +10,20 @@
 <body>
   <div id="body">
    <div id="data"></div>
-   <div id="arrow1"></div>
-   <div id="arrow2"></div>
-   <div id="arrow3"></div>
   </div>
 
 <script>
 var propcomJSON = "http://design.propcom.co.uk/buildtest/accordion-data.json";
 $.getJSON(propcomJSON, function (json) {
     json.blocks.map(x => {
-      $('#data').append('<div class="heading">' + '<button class="dropbtn">' + x.heading + '</button>' + '</div>' + '<div class="content">' + x.content + '</div>' + '<br>');
+      $('#data').append('<div class="heading">' + '<button class="dropbtn">' + x.heading + '<div class="arrow">' + '</div>' + '</button>' + '</div>' + '<div class="content">' + x.content + '</div>' + '<br>');
     })
   $($('.heading')[0]).attr("id", "heading1");
   $($('.heading')[1]).attr("id", "heading2");
   $($('.heading')[2]).attr("id", "heading3");
+  $($('.arrow')[0]).attr("id", "arrow1");
+  $($('.arrow')[1]).attr("id", "arrow2");
+  $($('.arrow')[2]).attr("id", "arrow3");
   $($('.dropbtn')[0]).attr("id", "dropbtn1");
   $($('.dropbtn')[1]).attr("id", "dropbtn2");
   $($('.dropbtn')[2]).attr("id", "dropbtn3");
@@ -35,14 +35,20 @@ $.getJSON(propcomJSON, function (json) {
 
 $("#dropbtn1").click(function(){
     $("#content1").toggle(1000);
+    $("#arrow1").addClass("up");
+    $("#dropbtn1").addClass("click");
 });
 
 $("#dropbtn2").click(function(){
     $("#content2").toggle(1000);
+    $("#arrow2").addClass("up");
+    $("#dropbtn2").addClass("click");
 });
 
 $("#dropbtn3").click(function(){
     $("#content3").toggle(1000);
+    $("#arrow3").addClass("up");
+    $("#dropbtn3").addClass("click");
 });
 
 });
